@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="header">รายชื่อนักศึกษา</div>
+  <div class="main">
+
+    <table class="table table-secondary table-striped table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">รหัสนักศึกษา</th>
+          <th scope="col">ชื่อ</th>
+          <th scope="col">นามสกุล</th>
+          <th scope="col">ชั้นปี</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor= 'let i of StudentData'>
+          <th scope="col" >{{i.std_id}}</th>
+          <td >{{i.fristname}}</td>
+          <td >{{i.lastname}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+

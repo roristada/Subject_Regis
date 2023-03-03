@@ -1,0 +1,46 @@
+<form [formGroup]="Add_DropForm" >
+  <div class="container">
+  <div class="header">เพิ่ม-ถอนวิชาเรียน</div>
+  <div class="main">
+    <table class="table table-secondary table-striped table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">รหัสวิชา</th>
+          <th scope="col">ตอนเรียน</th>
+          <th scope="col">รายวิชา</th>
+          <th scope="col">วัน-เวลาเรียน</th>
+          <th scope="col">หน่วยกิต</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor= 'let i of RegisterData'>
+          <th scope="col" >{{i.subject_id}}</th>
+          <td >{{i.section}}</td>
+          <td >{{i.subject_name}}</td>
+          <td >{{i.time}}</td>
+          <td >{{i.unit}}</td>
+      </tbody>
+    </table>
+
+    <div>
+      <p id="option">
+        <label><input type="checkbox" (click)="add_or_drop('a')"><span>เพิ่มวิชาเรียน</span></label>
+        <label><input type="checkbox" (click)="add_or_drop('d')"><span>ถอนวิชาเรียน</span></label>
+      </p>
+      <div class="input-field">
+        <input type="text" class="form-control" formControlName="subject_id" placeholder="รหัสวิชา">
+        <input type="text" class="form-control" formControlName="section" placeholder="ตอนเรียน">
+        <!-- <input type="text" class="form-control" formControlName="teacher_id" placeholder="รหัสผู้สอน"> -->
+      </div>
+    </div>
+
+    <div class="button">
+      <div class="submitbtn">
+        <button type="button" class="btn btn-success" (click)="submit()">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+</form>
+
+

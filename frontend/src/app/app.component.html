@@ -1,0 +1,26 @@
+  <div class="wrapper">
+    <div class="side-bar">
+      <img class="logo" [src] =logo>
+      <h2>KMUTNB</h2>
+      <ul>
+          <li><a routerLink="homepage">ข่าวสาร</a></li>
+          <li><a routerLink="registration">ลงทะเบียนเรียน</a></li>
+          <li><a routerLink="add-drop">เพิ่ม-ถอนวิชาเรียน</a></li>
+          <li><a routerLink="change-sub">เปลี่ยนตอนวิชาเรียน</a></li>
+          <li><a routerLink="regisresult">ผลการลงทะเบียน</a></li>
+          <li><a routerLink="subjtable">ตารางเรียน</a></li>
+          <li><a routerLink="contract">ช่องทางการติดต่อ</a></li>
+          <li><a routerLink="teacher">อาจารย์</a></li>
+      </ul>
+    </div>
+    <div class="header-top">
+      <div class="header">ระบบลงทะเบียนวิชาเรียน</div>
+      <!-- //<div class="std">6204062630441 ธาดา อาจหาญ</div> -->
+      <div class="icon-power"><a routerLink="login"><fa-icon [icon]="faPowerOff" class="power"></fa-icon></a></div>
+    </div>
+  </div>
+  <div class="main">
+    <router-outlet></router-outlet>
+  </div>
+
+

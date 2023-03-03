@@ -1,0 +1,41 @@
+<form [formGroup]="ChangeSecForm">
+<div class="container">
+  <div class="header">เปลี่ยนตอนวิชาเรียน</div>
+  <div class="main">
+    <table class="table table-secondary table-striped table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">รหัสวิชา</th>
+          <th scope="col">ตอนเรียน</th>
+          <th scope="col">รายวิชา</th>
+          <th scope="col">วัน-เวลาเรียน</th>
+          <th scope="col">หน่วยกิต</th>
+      </thead>
+      <tbody>
+        <tr *ngFor= 'let i of RegisterData'>
+          <th scope="col" >{{i.subject_id}}</th>
+          <td >{{i.section}}</td>
+          <td >{{i.subject_name}}</td>
+          <td >{{i.time}}</td>
+          <td >{{i.unit}}</td>
+    </table>
+
+    <div>
+      <div class="input-field">
+        <input type="text" class="form-control" formControlName="subject_id" placeholder="รหัสวิชา">
+        <input type="text" class="form-control" placeholder="ตอนเรียนเก่า">
+        <input type="text" class="form-control" formControlName="section" placeholder="ตอนเรียนใหม่">
+      </div>
+    </div>
+
+    <div class="button">
+      <div class="submitbtn">
+        <button type="button" class="btn btn-success" (click)="submit()">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+</form>
+
+
+

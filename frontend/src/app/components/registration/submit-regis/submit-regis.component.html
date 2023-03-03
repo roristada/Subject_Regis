@@ -1,0 +1,55 @@
+<div class="container">
+  <div class="header">ลงทะเบียนวิชาเรียน</div>
+  <div class="main">
+    <table class="table table-secondary table-striped table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">รหัสวิชา</th>
+          <th scope="col">ตอนเรียน</th>
+          <th scope="col">รายวิชา</th>
+          <th scope="col">วัน-เวลาเรียน</th>
+          <th scope="col">หน่วยกิต</th>
+          <th scope="col"></th>
+      </thead>
+      <tbody>
+        <tr *ngFor= 'let i of RegisterData'>
+          <th scope="col" >{{i.subject_id}}</th>
+          <td >{{i.section}}</td>
+          <td >{{i.subject_name}}</td>
+          <td >{{i.time}}</td>
+          <td >{{i.unit}}</td>
+          <td><button class="btn btn-sm btn-danger" (click)="deleteId(i.subject_id,i.section)" >Delete</button> </td>
+        </tr>
+      </tbody>
+    </table>
+    <table class="table table-secondary table-striped table-bordered">
+      <thead>
+        <tr>
+          <th>ค่าบำรุงและค่าทำเนียมอัตราปกติ</th>
+          <th>จำนวน(บาท)</th>
+          <th>ต้องชำระ(บาท)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>ค่าบำรุงการศึกษาภาคละ</td>
+          <td>30,000</td>
+          <td>30,000</td>
+        </tr>
+        <tr>
+          <td>รวม</td>
+          <td colspan="3">30,000</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="button">
+      <div class="backbtn">
+        <button type="button" class="btn btn-success" (click)="back()" >Back</button>
+      </div>
+      <div class="submitbtn">
+        <button type="button" class="btn btn-success" (click)="submit()">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,49 @@
+<!-- <form [formGroup]="regisForm"> -->
+<div class="container">
+
+  <div class="header">ลงทะเบียนวิชาเรียน</div>
+  <select (change) = "ChangeValue($event)">
+    <option value="">ภาค/ปีการศึกษา</option>
+    <option value="1/1">1/2562</option>
+    <option value="2/1">2/2562</option>
+    <option value="1/2">1/2563</option>
+    <option value="2/2">2/2563</option>
+    <option value="1/3">1/2564</option>
+    <option value="2/3">2/2564</option>
+    <option value="1/4">1/2565</option>
+    <option value="2/4">2/2565</option>
+  </select>
+  <!-- <button class="btn btn-sm btn-primary" (click)="changeYear(1,2562)" >1/2562</button>
+  <button class="btn btn-sm btn-primary" (click)="changeYear(2)" >ปี 2</button>
+  <button class="btn btn-sm btn-primary" (click)="changeYear(3)" >ปี 3</button>
+  <button class="btn btn-sm btn-primary" (click)="changeYear(4)" >ปี 4</button> -->
+  <div class="main">
+    <table class="table table-secondary table-striped table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">รหัสวิชา</th>
+          <th scope="col">ตอนเรียน</th>
+          <th scope="col">รายวิชา</th>
+          <th scope="col">วัน-เวลาเรียน</th>
+          <th scope="col">หน่วยกิต</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor = 'let i of SubjectData'>
+          <th scope="col" >{{i.subject_id}}</th>
+          <td >{{i.section}}</td>
+          <td >{{i.subject_name}}</td>
+          <td >{{i.time}}</td>
+          <td >{{i.unit}}</td>
+          <td><input class="form-check-input" type="checkbox" id="flexCheckDefault"
+          (click) ="select(6204062630441,i.teacher_id,i.subject_id,i.section,i.unit,i.max_std,i.year,i.semester) "></td>
+          <!-- <td><input class="form-check-input" type="checkbox" id="flexCheckDefault" [checked]="isChecked" (change)="select(i)"></td> -->
+        </tr>
+      </tbody>
+    </table>
+    <div class="submit">
+      <button type="button" class="btn btn-success" (click)="nextpage()">Next</button>
+    </div>
+  </div>
+</div>

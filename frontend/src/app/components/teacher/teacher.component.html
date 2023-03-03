@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="header">รายชื่อวิชาที่สอน</div>
+  <div class="main">
+    <select (change) = "ChangeValue($event)">
+      <option value="">รหัสผู้สอน</option>
+      <option value="040201">040201</option>
+      <option value="040601">040601</option>
+      <option value="040602">040602</option>
+      <option value="040603">040603</option>
+      <option value="040604">040604</option>
+      <option value="080101">080101</option>
+      </select>
+    <table class="table table-secondary table-striped table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">รหัสวิชา</th>
+          <th scope="col">ตอนเรียน</th>
+          <th scope="col">รายวิชา</th>
+          <th scope="col">วัน-เวลาเรียน</th>
+          <th scope="col">หน่วยกิต</th>
+          <th scope="col">จำนวนคน</th>
+          <!-- <th scope="col">ดูรายชื่อ</th> -->
+      </thead>
+      <tbody>
+        <tr *ngFor= 'let index of SubjectData ; let i = index' [attr.data-index]="i">
+          <th scope="col" >{{index.subject_id}}</th>
+          <td >{{index.section}}</td>
+          <td >{{index.subject_name}}</td>
+          <td >{{index.time}}</td>
+          <td >{{index.unit}}</td>
+          <td >{{index.max_std}}</td>
+          <!-- <td><button class="btn btn-sm btn-info" (click)="view(i)">view</button> </td> -->
+        </tr>
+      </tbody>
+    </table>
+    <!-- <table class="table table-secondary table-striped table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">รหัสนักศึกษา</th>
+          <th scope="col">ชื่อ</th>
+          <th scope="col">นามสกุล</th>
+          <th scope="col">ชั้นปี</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor= 'let index of StudentData ; let i = index' [attr.data-index]="i">
+          <th scope="col" >{{index.std_id}}</th>
+          <td >{{index.fristname}}</td>
+          <td >{{index.lastname}}</td>
+          <td >{{index.std_year}}</td>
+        </tr>
+      </tbody>
+    </table> -->
+  </div>
+</div>
+

@@ -1,0 +1,68 @@
+<div class="container">
+  <div class="header">ผลการลงทะเบียน</div>
+  <div class="main">
+    <h5 style="margin-left: 150px;">สรุปรายวิชาที่ลงทะเบียน</h5>
+    <select (change) = "ChangeValue($event)">
+      <option value="">ภาค/ปีการศึกษา</option>
+      <option value="1/1">1/2562</option>
+      <option value="2/1">2/2562</option>
+      <option value="1/2">1/2563</option>
+      <option value="2/2">2/2563</option>
+      <option value="1/3">1/2564</option>
+      <option value="2/3">2/2564</option>
+      <option value="1/4">1/2565</option>
+      <option value="2/4">2/2565</option>
+      </select>
+    <table class="table table-secondary table-striped table-bordered table-hover mt-4">
+      <thead>
+        <tr>
+          <th scope="col">รหัสวิชา</th>
+          <th scope="col">ตอนเรียน</th>
+          <th scope="col">รายวิชา</th>
+          <th scope="col">วัน-เวลาเรียน</th>
+          <th scope="col">หน่วยกิต</th>
+          <th scope="col">สถานะ</th>
+        </tr>
+      </thead>
+        <tbody>
+          <tr *ngFor= 'let i of RegisterData'>
+            <th scope="col" >{{i.subject_id}}</th>
+            <td >{{i.section}}</td>
+            <td >{{i.subject_name}}</td>
+            <td >{{i.time}}</td>
+            <td >{{i.unit}}</td>
+            <td > P </td>
+          </tr>
+        </tbody>
+    </table>
+    <h5 style="margin-left: 150px; margin-top: 50px;">ผลการลงทะเบียน</h5>
+    <table class="table table-secondary table-striped table-bordered mt-4">
+      <thead>
+        <tr>
+          <th>ครั้งที่</th>
+          <th>วันที่</th>
+          <th>ประเภท</th>
+          <th>วิชา</th>
+          <th>สถานะ</th>
+          <th>ใบเสร็จ</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>2/2564 - 2</td>
+          <td>6 ม.ค. 2565 14:30น.</td>
+          <td>AD</td>
+          <td>04063333</td>
+          <td>P</td>
+          <td>N</td>
+          <td><button class="btn btn-success">Check</button></td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
+
+
